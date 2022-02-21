@@ -1,5 +1,5 @@
 /*******************************************************************************************************
-  Programs for Arduino - Copyright of the author Stuart Robinson - 06/02/20
+  Programs for raspberry pi pico - Copyright of the author Stuart Robinson - 06/02/20
 
   This program is supplied as is, it is up to the user of the program to decide if the program is
   suitable for the intended purpose and free from errors.
@@ -7,7 +7,7 @@
 
 //*******  Setup hardware pin definitions here ! ***************
 
-//These are the pin definitions for one of my own boards, the Easy Pro Mini,
+//These are the pin definitions for one of my own boards and using an ebyte module,
 //be sure to change the definitions to match your own setup. Some pins such as DIO2,
 //DIO3, BUZZER may not be in used by this sketch so they do not need to be
 //connected and should be included and be set to -1.
