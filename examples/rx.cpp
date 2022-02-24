@@ -13,7 +13,10 @@
 using namespace std;
 
 int16_t rssi = 0;
-uint16_t pressure = 0;
+
+uint16_t pressure;
+int16_t altitude;
+float temperature;
 
 int main() 
 {
@@ -39,11 +42,14 @@ int main()
      rssi = LT.readPacketRSSI();
 
      LT.startReadSXBuffer(0);
-     LT.readSXBuffer(12);
+     LT.readSXBuffer(8);
      LT.endReadSXBuffer();
       
      pressure = LT.readUint16(0);
-     cout << "pressure: " << pressure << endl;
+     altitude = LT.readInt16(2);
+     temperature = LT.readFloat(4);
+    
+     cout << "pressure: " << pressure << " altitude: " << altitude << " temperature: " << temperature << endl;
      cout << "rssi : " << rssi << endl;
   }
  }
