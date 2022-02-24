@@ -17,7 +17,7 @@ Here is an example of CMakeList :
 
     # point out the CMake, where to find the executable source file
     add_executable(${PROJECT_NAME}
-        main.cpp
+        rx.cpp
         Settings.h
         SX1280_Def.h
         SX1280.h
