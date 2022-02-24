@@ -1,3 +1,9 @@
+/*
+  Copyright 2021 - Stuart Robinson
+  Licensed under a MIT license displayed at the bottom of this document.
+*/
+
+
 //SX1280LT Includes
 
 
