@@ -12,10 +12,10 @@
 //be sure to change the definitions to match your own setup. Some pins such as DIO2,
 //DIO3, BUZZER may not be in used by this sketch so they do not need to be
 //connected and should be included and be set to -1.
-#define PIN_MISO 19
+#define PIN_MISO 16
 #define PIN_CS   -1
 #define PIN_SCK  18
-#define PIN_MOSI 16
+#define PIN_MOSI 19
 
 #define SPI_PORT spi0
 
