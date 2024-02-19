@@ -1,10 +1,9 @@
 /*
   Copyright 2022 - Juaneda Axel
   Licensed under a MIT license displayed at the bottom of this document.
-  
+
   This code was adapted from the library of Stuart Robinson https://github.com/StuartsProjects/SX12XX-LoRa
 */
-
 
 #ifndef SX1280_H // include guard
 #define SX1280_H
@@ -23,7 +22,7 @@ using namespace std;
 
 class SX1280
 {
- public :
+public:
     SX1280();
 
     void setupLoRa();
@@ -34,9 +33,9 @@ class SX1280
     void setPacketType(uint8_t packettype);
     void setRfFrequency(uint32_t frequency, int32_t offset);
     void setBufferBaseAddress(uint8_t txBaseAddress, uint8_t rxBaseAddress);
-    void setModulationParams(uint8_t modParam1, uint8_t modParam2, uint8_t  modParam3);
-    void setPacketParams(uint8_t packetParam1, uint8_t  packetParam2, uint8_t packetParam3, uint8_t packetParam4, uint8_t packetParam5, uint8_t packetParam6, uint8_t packetParam7);
-    void setDioIrqParams(uint16_t irqMask, uint16_t dio1Mask, uint16_t dio2Mask, uint16_t dio3Mask );
+    void setModulationParams(uint8_t modParam1, uint8_t modParam2, uint8_t modParam3);
+    void setPacketParams(uint8_t packetParam1, uint8_t packetParam2, uint8_t packetParam3, uint8_t packetParam4, uint8_t packetParam5, uint8_t packetParam6, uint8_t packetParam7);
+    void setDioIrqParams(uint16_t irqMask, uint16_t dio1Mask, uint16_t dio2Mask, uint16_t dio3Mask);
     void setHighSensitivity();
     void setTxParams(uint8_t RampTime);
 
@@ -76,17 +75,17 @@ class SX1280
 
     void writeFloat(float fl, uint8_t startaddr);
     float readFloat(uint8_t startaddr);
-    
+
     void writeChar(char c, uint8_t addr);
     char readChar(uint8_t addr);
 
-    #ifdef DEBUG
+#ifdef DEBUG
     uint8_t getTXBuffer(uint8_t addr);
-    #endif
+#endif
 
     ~SX1280();
 
- private :
+private:
     void checkBusy();
     bool checkDevice();
 
@@ -114,7 +113,6 @@ class SX1280
 };
 
 #endif
-
 
 /*
   MIT license

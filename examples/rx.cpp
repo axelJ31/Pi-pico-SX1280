@@ -3,7 +3,6 @@
   Licensed under a MIT license displayed at the bottom of this document.
 */
 
-
 #include <stdio.h>
 #include <iostream>
 #include "pico/stdlib.h"
@@ -18,43 +17,43 @@ uint16_t pressure;
 int16_t altitude;
 float temperature;
 
-int main() 
+int main()
 {
- stdio_init_all();
+    stdio_init_all();
 
- SX1280 LT;
+    SX1280 LT;
 
- if(LT.begin()) 
- {
-  LT.setupLoRa();
-  cout << "waiting for a message..." << endl;
- }
- else
- {
-  while(1) cout << "failed in begin function" << endl;
- }
+    if (LT.begin())
+    {
+        LT.setupLoRa();
+        cout << "waiting for a message..." << endl;
+    }
+    else
+    {
+        while (1)
+            cout << "failed in begin function" << endl;
+    }
 
- while (1)
- {
-  if(LT.checkIrqs())
-  {
-     LT.receiveSXBuffer(0,0);
-     rssi = LT.readPacketRSSI();
+    while (1)
+    {
+        if (LT.checkIrqs())
+        {
+            LT.receiveSXBuffer(0, 0);
+            rssi = LT.readPacketRSSI();
 
-     LT.startReadSXBuffer(0);
-     LT.readSXBuffer(8);
-     LT.endReadSXBuffer();
-      
-     pressure = LT.readUint16(0);
-     altitude = LT.readInt16(2);
-     temperature = LT.readFloat(4);
-    
-     cout << "pressure: " << pressure << " altitude: " << altitude << " temperature: " << temperature << endl;
-     cout << "rssi : " << rssi << endl;
-  }
- }
+            LT.startReadSXBuffer(0);
+            LT.readSXBuffer(8);
+            LT.endReadSXBuffer();
+
+            pressure = LT.readUint16(0);
+            altitude = LT.readInt16(2);
+            temperature = LT.readFloat(4);
+
+            cout << "pressure: " << pressure << " altitude: " << altitude << " temperature: " << temperature << endl;
+            cout << "rssi : " << rssi << endl;
+        }
+    }
 }
-
 
 /*
   MIT license
